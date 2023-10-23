@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsAndPlayersGraphQL", "TeamsAndPlayersGraphQL.csproj", "{BD968AB5-0881-4FB1-AABA-D390D885428F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3FC1EE8B-A531-45B5-B46C-55C8537BF644}"
+	ProjectSection(SolutionItems) = preProject
+		Team.cs = Team.cs
+		TeamsDBContext.cs = TeamsDBContext.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD968AB5-0881-4FB1-AABA-D390D885428F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD968AB5-0881-4FB1-AABA-D390D885428F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD968AB5-0881-4FB1-AABA-D390D885428F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD968AB5-0881-4FB1-AABA-D390D885428F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB8744F1-8E1D-4E3B-B6CF-D31549EFFECC}
+	EndGlobalSection
+EndGlobal
