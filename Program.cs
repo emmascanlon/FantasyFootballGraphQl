@@ -1,20 +1,22 @@
-using Microsoft.EntityFrameworkCore;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddGraphQLServer()
-    .AddQueryType<Query>();
 
-builder.Services.AddPooledDbContextFactory<TeamsDbContext>(o => o.UseSqlite("Server=localhost,1433;Database=GraphQLDemo;Integrated Security=true;TrustServerCertificate=true"));
+// Add services to the container.
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-app.UseRouting();
 
-app.UseEndpoints(endpoints =>
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
 {
-    endpoints.MapGraphQL();
-});
+    app.UseExceptionHandler("/Home/Error");
+}
+app.UseStaticFiles();
 
-app.MapGet("/", () => "Hello World!");
+app.UseRouting();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
