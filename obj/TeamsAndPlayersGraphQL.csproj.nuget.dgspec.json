@@ -56,13 +56,13 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
             "HotChocolate.AspNetCore": {
               "target": "Package",
-              "version": "[13.5.1, )"
-            },
-            "HotChocolate.Data.EntityFramework": {
-              "target": "Package",
-              "version": "[13.5.1, )"
+              "version": "[11.0.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
