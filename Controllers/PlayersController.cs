@@ -17,6 +17,7 @@ namespace TeamsAndPlayersGraphQL.Controllers
        [Route("/GetAllPlayers")]
        public async Task<IEnumerable<Player>> GetPlayers()
        {
+            Console.WriteLine("CONTROLLER");
            SqlConnection connection = new SqlConnection("Server=localhost,1433;Database=GraphQLDemo;Integrated Security=true;TrustServerCertificate=true");
            var list = await connection.QueryAsync<Player>("SELECT * FROM Players");
            return list;

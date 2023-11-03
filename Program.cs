@@ -2,10 +2,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-//builder.Services.AddControllersWithViews();
-builder.Services.AddGraphQLServer()
-    .AddQueryType<Query>()
-    .AddMutationType<Mutation>();
+// builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
