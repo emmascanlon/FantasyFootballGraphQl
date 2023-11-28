@@ -1,0 +1,1 @@
+public record UpdateTeamInput(int Id, string Name, string Logo);

@@ -1,0 +1,1 @@
+public record CreateTeamInput(string Name, string Logo);

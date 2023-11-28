@@ -24,28 +24,14 @@ namespace TeamsAndPlayersGraphQL.Controllers
        }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //    [HttpGet]
-    //    [Route("/GetAllTeams")]
-    //      public async Task<IEnumerable<Player>> GetTeams()
-    //    {
-    //        SqlConnection connection = new SqlConnection("Server=localhost,1433;Database=GraphQLDemo;Integrated Security=true;TrustServerCertificate=true");
-    //        var list = await connection.QueryAsync<Player>("SELECT * FROM Teams t JOIN Players on t.Id == TeamId");
-    //        return list;
-    //    }
+       [HttpGet]
+       [Route("/GetAllTeams")]
+         public async Task<IEnumerable<Player>> GetTeams()
+       {
+           SqlConnection connection = new SqlConnection("Server=localhost,1433;Database=GraphQLDemo;Integrated Security=true;TrustServerCertificate=true");
+           var list = await connection.QueryAsync<Player>("SELECT * FROM Teams t JOIN Players on t.Id == TeamId");
+           return list;
+       }
 
     //    [HttpGet]
     //    [Route("/GetAllTeams")]
