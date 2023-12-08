@@ -16,5 +16,6 @@
         public decimal RushYdsPerGame {get; set;}
         public decimal RecYardsPerGame {get; set;}
         public decimal PassCompletionsPerGame {get; set;}
+        public string Position {get; set;}
     }
 }

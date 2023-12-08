@@ -66,7 +66,8 @@ public class Query {
                 RecYardsPerGame = player.RecYardsPerGame,
                 RushYdsPerGame = player.RushYdsPerGame,
                 TdPerGame = player.TdPerGame,
-                 TotalFantasyPoints = player.TotalFantasyPoints
+                 TotalFantasyPoints = player.TotalFantasyPoints,
+                 Position = player.Position
         });
         }
     }
