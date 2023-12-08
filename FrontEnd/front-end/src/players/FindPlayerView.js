@@ -2,6 +2,8 @@ import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { PlayerRow } from "./PlayerRow";
 import {styled} from "styled-components";
+import {SelectionBar} from "./SelectionBar";
+import {PositionSelector} from './PositionSelector';
 
 const AllPlayers = styled.div`
   max-width: 600px;
@@ -10,21 +12,6 @@ const AllPlayers = styled.div`
   padding: 12px;
 `;
 
-const FlexDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-`;
-
-const SelectionBar = () => {
-  return(
-    <FlexDiv>
-      <button>Available</button>
-      <button>Leaders</button>
-      </FlexDiv>
-  )
-}
 
 const PLAYERS_QUERY = gql`
 {
@@ -51,6 +38,7 @@ export const FindPlayerView = () => {
     <AllPlayers>
       <h1>Players</h1>
       <SelectionBar />
+      <PositionSelector />
       <ul>
         {data.players.map((player, index) => (
           <PlayerRow key={player.id} player = {player} index={index} />
