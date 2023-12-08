@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "eZZefKlBS1VojO2UF/O5RXH8GqdkagnoLQ0lEIEasuk=",
+  "Hash": "dDH5m/+6dKU1KYKOHQ1xWGjRGIx2y3mhS7RAAjbAsc0=",
   "Source": "TeamsAndPlayersGraphQL",
   "BasePath": "_content/TeamsAndPlayersGraphQL",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TeamsAndPlayersGraphQL\\wwwroot",
+      "Source": "TeamsAndPlayersGraphQL",
+      "ContentRoot": "C:\\Users\\emscanl\\TeamsAndPlayersGraphQL\\wwwroot\\",
+      "BasePath": "_content/TeamsAndPlayersGraphQL",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

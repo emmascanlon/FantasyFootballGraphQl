@@ -60,17 +60,31 @@
               "target": "Package",
               "version": "[2.0.123, )"
             },
+            "GreenDonut": {
+              "target": "Package",
+              "version": "[13.7.0, )"
+            },
             "HotChocolate.AspNetCore": {
               "target": "Package",
-              "version": "[11.0.0, )"
+              "version": "[13.7.0, )"
+            },
+            "HotChocolate.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[13.7.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.7, )"
+              "version": "[7.0.14, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.12, )"
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.14, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -1,12 +1,10 @@
 using System.Data.SqlClient;
 using Dapper;
-using GreenDonut;
-using HotChocolate.DataLoader;
 using TeamsAndPlayersGraphQL;
 
 public class PlayersDataLoader : GroupedDataLoader<int, Player>
 {
-    public PlayersDataLoader(IBatchScheduler batchScheduler, DataLoaderOptions<int>? options = null) : base(batchScheduler, options)
+    public PlayersDataLoader(IBatchScheduler batchScheduler, DataLoaderOptions? options = null) : base(batchScheduler, options)
     {
     }
 
