@@ -1,7 +1,7 @@
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
-
-import { FindPlayerView } from "./players/FindPlayerView";
+import styled from 'styled-components';
+import { FindPlayerView} from "./players/FindPlayerView";
 
 const client = new ApolloClient({
   link: new HttpLink({
@@ -10,10 +10,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const CenteredDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 function App() {
   return (
     <ApolloProvider client={client}>
+      <CenteredDiv>
     <FindPlayerView />
+    </CenteredDiv>
   </ApolloProvider>
   );
 }

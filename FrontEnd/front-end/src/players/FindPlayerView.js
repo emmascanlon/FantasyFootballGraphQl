@@ -4,7 +4,8 @@ import { PlayerRow } from "./PlayerRow";
 import {styled} from "styled-components";
 
 const AllPlayers = styled.div`
-  max-width: 500px;
+  max-width: 600px;
+  min-width: 600px;
   justify-self: center;
   padding: 12px;
 `;

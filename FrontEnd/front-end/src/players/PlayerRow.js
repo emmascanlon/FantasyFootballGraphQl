@@ -46,8 +46,8 @@ const Username = styled.div`
 `;
 
 const BioDiv = styled.div`
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 350px;
+    min-width: 350px;
 `;
 
 const Index = styled.div`
