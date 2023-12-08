@@ -29,9 +29,11 @@ const SmallFont = styled.div`
     font-size: 8px;
 `;
 
-const StatDiv = styled.div`
+const StatDiv = styled.button`
 display: flex;
 flex-direction: column;
+background-color:  #808080;
+border: none;
 `;
 
 const Stat = styled.div`
@@ -41,6 +43,15 @@ color: white;
 const Username = styled.div`
     font-size: 14px;
     color: darkRed;
+`;
+
+const BioDiv = styled.div`
+    max-width: 300px;
+    min-width: 300px;
+`;
+
+const Index = styled.div`
+font-size: 24px;
 `;
 
 const StatBar = ({player}) => {
@@ -70,18 +81,19 @@ const StatBar = ({player}) => {
     )
 }
 
-export const PlayerRow =({player}) => {
+export const PlayerRow =({player, index}) => {
 var {upcomingMatchIsHomeMatch, upcomingOpponentName} = player.team;
 
     return(
         <PlayerRowDiv>
         <FlexDiv>
-         <div>
-            <strong>{player.name}</strong> 
+        <Index>{index + 1}</Index>
+         <BioDiv>
+         <strong>{player.name}</strong> 
             <div>{player.position}-{player.team.name}</div>
             <div>Sun 2:00 PM {`${upcomingMatchIsHomeMatch ? "vs." : "@"} ${upcomingOpponentName}`}</div>
             {player.fantasyTeam && <Username>&rarr; {player.fantasyTeam.managerName}</Username>}
-        </div>
+        </BioDiv>
         <ProjectedPoints>
             <SmallFont>PROJ</SmallFont> 
             <div>{player.projectedPoints}</div>

@@ -51,8 +51,8 @@ export const FindPlayerView = () => {
       <h1>Players</h1>
       <SelectionBar />
       <ul>
-        {data.players.map((player) => (
-          <PlayerRow key={player.id} player = {player} />
+        {data.players.map((player, index) => (
+          <PlayerRow key={player.id} player = {player} index={index} />
         ))}
       </ul>
     </AllPlayers>
