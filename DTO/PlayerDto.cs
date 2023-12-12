@@ -5,8 +5,8 @@ public class PlayerDto
     public int TeamId {get; set;}
     public string Position {get; set;}
     public TeamDto Team {get; set;}
-    public int FantasyTeamId {get; set;}
-    public FantasyTeamDto FantasyTeam {get; set;}
+    public int? FantasyTeamId {get; set;}
+    public FantasyTeamDto? FantasyTeam {get; set;}
     public string HealthStatus {get; set;}
     public string Photo {get; set;}
     public decimal ProjectedPoints {get; set;}

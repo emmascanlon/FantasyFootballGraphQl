@@ -6,8 +6,8 @@
         public string? Name { get; set; }
         public int TeamId { get; set; }
         public Team Team {get; set;}
-        public int FantasyTeamId {get; set;}
-        public FantasyTeam FantasyTeam {get; set;}
+        public int? FantasyTeamId {get; set;}
+        public FantasyTeam? FantasyTeam {get; set;}
         public string HealthStatus {get; set;}
         public string Photo {get; set;}
         public decimal ProjectedPoints {get; set;}

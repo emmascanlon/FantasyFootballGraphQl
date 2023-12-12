@@ -1,6 +1,5 @@
 using System.Data.SqlClient;
 using Dapper;
-using HotChocolate.Types;
 using Microsoft.EntityFrameworkCore;
 using TeamsAndPlayersGraphQL;
 
@@ -36,12 +35,13 @@ public class Query {
            return list.FirstOrDefault();
     }
 
+    [UsePaging(IncludeTotalCount = true, DefaultPageSize = 100)]
     public async Task<IQueryable<Player>> Players()
     {
         {
         var playerDTOs = _context.Players
             .Include(p => p.Team)
-           .Include(p => p.FantasyTeam);
+          .Include(p => p.FantasyTeam);
 
         return playerDTOs.Select(player => new Player {
                 Id = player.Id,
@@ -59,15 +59,14 @@ public class Query {
                     TeamName = player.FantasyTeam.TeamName,
                     ManagerName = player.FantasyTeam.ManagerName,
                 },
-                HealthStatus = player.HealthStatus,
-                 PassCompletionsPerGame = player.PassCompletionsPerGame,
-                //Photo = player.Photo,
-                ProjectedPoints = player.ProjectedPoints,
-                RecYardsPerGame = player.RecYardsPerGame,
-                RushYdsPerGame = player.RushYdsPerGame,
-                TdPerGame = player.TdPerGame,
-                 TotalFantasyPoints = player.TotalFantasyPoints,
-                 Position = player.Position
+                // HealthStatus = player.HealthStatus,
+                //  PassCompletionsPerGame = player.PassCompletionsPerGame,
+                // ProjectedPoints = player.ProjectedPoints,
+                // RecYardsPerGame = player.RecYardsPerGame,
+                // RushYdsPerGame = player.RushYdsPerGame,
+                // TdPerGame = player.TdPerGame,
+                //  TotalFantasyPoints = player.TotalFantasyPoints,
+                //  Position = player.Position
         });
         }
     }

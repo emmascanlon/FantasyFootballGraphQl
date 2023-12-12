@@ -49,7 +49,7 @@ namespace TeamsAndPlayersGraphQL.Migrations
                     PlayerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TeamId = table.Column<int>(type: "int", nullable: false),
                     Position = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FantasyTeamId = table.Column<int>(type: "int", nullable: false),
+                    FantasyTeamId = table.Column<int>(type: "int", nullable: true),
                     HealthStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjectedPoints = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -66,8 +66,7 @@ namespace TeamsAndPlayersGraphQL.Migrations
                         name: "FK_Players_FantasyTeams_FantasyTeamId",
                         column: x => x.FantasyTeamId,
                         principalTable: "FantasyTeams",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Players_Teams_TeamId",
                         column: x => x.TeamId,

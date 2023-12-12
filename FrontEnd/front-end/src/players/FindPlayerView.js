@@ -15,18 +15,31 @@ const AllPlayers = styled.div`
 
 const PLAYERS_QUERY = gql`
 {
-  players {
-      name, id, position, projectedPoints, 
-      totalFantasyPoints, healthStatus, rushYdsPerGame, recYardsPerGame, passCompletionsPerGame, tdPerGame,
-      team {
-        name, logo, id, upcomingOpponentName, upcomingMatchIsHomeMatch
-      },
-      fantasyTeam {
-        managerName
-      }
+  players{
+  edges {
+      node {
+       name, id,team {
+           name, logo, id, upcomingOpponentName, upcomingMatchIsHomeMatch
+       },
+       fantasyTeam {
+           managerName
+       }
+           }
+  },
+  pageInfo {
+      hasNextPage,
+      hasPreviousPage,
+      endCursor
+  },
+  totalCount
   }
 }
 `;
+// projectedPoints, totalFantasyPoints, healthStatus, rushYdsPerGame, recYardsPerGame, passCompletionsPerGame, tdPerGame, position
+    // totalFantasyPoints, healthStatus, rushYdsPerGame, recYardsPerGame, passCompletionsPerGame, tdPerGame, position, projectedPoints, 
+          //  fantasyTeam {
+      //      teamName, managerName, id
+      //  }
 
 export const FindPlayerView = () => {
   const { data, loading, error } = useQuery(PLAYERS_QUERY, {fetchPolicy: "no-cache"});
