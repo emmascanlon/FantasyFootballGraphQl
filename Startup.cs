@@ -24,7 +24,12 @@ public class Startup
 
      services.AddGraphQLServer()
     .AddQueryType<Query>()
-    .AddMutationType<Mutation>();
+    .AddMutationType<Mutation>()
+        .AddFiltering()
+        .AddSorting()
+        .AddProjections();
+
+    
 
          services.AddCors(options =>
         {

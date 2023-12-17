@@ -36,10 +36,11 @@ public class Query {
     }
 
     [UsePaging(IncludeTotalCount = true, DefaultPageSize = 100)]
+    [UseFiltering]
+    [UseSorting]
     public async Task<IQueryable<Player>> Players()
     {
-        {
-        var playerDTOs = _context.Players
+        IQueryable<PlayerDto> playerDTOs = _context.Players
             .Include(p => p.Team)
           .Include(p => p.FantasyTeam);
 
@@ -47,27 +48,26 @@ public class Query {
                 Id = player.Id,
                 Name = player.PlayerName,
                 TeamId = player.TeamId,
-                Team = new Team {
-                    Name = player.Team.TeamName,
-                    Logo = player.Team.Logo,
-                    UpcomingMatchIsHomeMatch = player.Team.UpcomingMatchIsHomeMatch,
-                    UpcomingOpponentName = player.Team.UpcomingOpponentName
+            Team = new Team
+            {
+                Name = player.Team.TeamName,
+                UpcomingMatchIsHomeMatch = player.Team.UpcomingMatchIsHomeMatch,
+                UpcomingOpponentName = player.Team.UpcomingOpponentName
 
-                },
-                FantasyTeamId = player.FantasyTeamId,
-                FantasyTeam = new FantasyTeam {
-                    TeamName = player.FantasyTeam.TeamName,
-                    ManagerName = player.FantasyTeam.ManagerName,
-                },
-                // HealthStatus = player.HealthStatus,
-                //  PassCompletionsPerGame = player.PassCompletionsPerGame,
-                // ProjectedPoints = player.ProjectedPoints,
-                // RecYardsPerGame = player.RecYardsPerGame,
-                // RushYdsPerGame = player.RushYdsPerGame,
-                // TdPerGame = player.TdPerGame,
-                //  TotalFantasyPoints = player.TotalFantasyPoints,
-                //  Position = player.Position
+            },
+            FantasyTeamId = player.FantasyTeamId,
+            FantasyTeam = new FantasyTeam
+            {
+                ManagerName = player.FantasyTeam.ManagerName,
+            },
+            HealthStatus = player.HealthStatus,
+                 PassCompletionsPerGame = player.PassCompletionsPerGame,
+                ProjectedPoints = player.ProjectedPoints,
+                RecYardsPerGame = player.RecYardsPerGame,
+                RushYdsPerGame = player.RushYdsPerGame,
+                TdPerGame = player.TdPerGame,
+                 TotalFantasyPoints = player.TotalFantasyPoints,
+                 Position = player.Position
         });
-        }
     }
 }
